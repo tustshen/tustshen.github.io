@@ -1,0 +1,30 @@
+<svg width="420" height="320" viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgPtz" x1="52" y1="26" x2="350" y2="278" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#112B45"/>
+      <stop offset="1" stop-color="#06131F"/>
+    </linearGradient>
+    <linearGradient id="bodyPtz" x1="128" y1="78" x2="290" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FCFF"/>
+      <stop offset="1" stop-color="#C3DAE9"/>
+    </linearGradient>
+    <linearGradient id="accentPtz" x1="171" y1="120" x2="251" y2="195" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#79F0FF"/>
+      <stop offset="1" stop-color="#1498F7"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="372" height="272" rx="28" fill="url(#bgPtz)"/>
+  <path d="M128 95C128 78.4315 141.431 65 158 65H254C270.569 65 284 78.4315 284 95V106H301C317.569 106 331 119.431 331 136V151C331 167.569 317.569 181 301 181H284V192C284 220.719 260.719 244 232 244H180C151.281 244 128 220.719 128 192V95Z" fill="url(#bodyPtz)"/>
+  <path d="M150 106H287V151C287 182.48 261.48 208 230 208H207C175.52 208 150 182.48 150 151V106Z" fill="#0B1522"/>
+  <circle cx="214" cy="149" r="38" fill="url(#accentPtz)"/>
+  <circle cx="214" cy="149" r="20" fill="#071521"/>
+  <circle cx="199" cy="133" r="5" fill="#D9FFFF" fill-opacity="0.72"/>
+  <rect x="174" y="216" width="83" height="18" rx="9" fill="#D7E8F5"/>
+  <path d="M185 234H245L255 268C257 274 252 280 246 280H184C178 280 173 274 175 268L185 234Z" fill="#E4F1FA"/>
+  <path d="M84 88H118V102H96V138H84V88Z" fill="#69E3FF"/>
+  <path d="M336 88H302V102H324V138H336V88Z" fill="#69E3FF"/>
+  <rect x="62" y="236" width="98" height="28" rx="14" fill="#0E253A"/>
+  <text x="80" y="254" fill="#69E3FF" font-family="JetBrains Mono, monospace" font-size="11">PTZ Tracking</text>
+  <rect x="262" y="236" width="100" height="28" rx="14" fill="#0E253A"/>
+  <text x="288" y="254" fill="#69E3FF" font-family="JetBrains Mono, monospace" font-size="11">Full Color</text>
+</svg>
