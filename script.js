@@ -1,5 +1,4 @@
 const toggle = document.querySelector(".nav-toggle");
-const nav = document.querySelector(".site-nav");
 const links = document.querySelectorAll(".site-nav a");
 const reveals = document.querySelectorAll(".reveal");
 const languageButtons = document.querySelectorAll(".lang-button");
@@ -15,16 +14,21 @@ const translations = {
     menu_aria: "Toggle navigation",
     nav_about: "About",
     nav_products: "Products",
-    nav_demo: "Demo",
+    nav_offer: "Offer",
+    nav_showcase: "Showcase",
     nav_contact: "Contact",
     hero_eyebrow: "Stevin Shen / IPC Solution Consultant",
-    hero_title: "IPC products, platform and deployment, made simple.",
+    hero_title: "Turnkey IPC solutions for global brands, channels and deployment partners.",
     hero_text:
-      "I help global clients build and launch IPC solutions across smart cameras, NVR, 4G and solar devices, cloud platforms, AI analytics and OEM/ODM delivery.",
-    hero_cta_primary: "Get in touch",
-    hero_cta_secondary: "View products",
-    panel_label: "Focus",
-    panel_title: "Turnkey IPC solutions for brands, channels and system partners.",
+      "I help clients shape market-ready IPC offers across smart cameras, 4G and solar devices, NVR systems, cloud platforms, AI alerts and OEM/ODM delivery.",
+    hero_cta_primary: "Request collaboration",
+    hero_cta_secondary: "See product categories",
+    trust_1: "Product + Platform + Delivery",
+    trust_2: "OEM / ODM / White-label",
+    trust_3: "International-facing presentation",
+    panel_label: "Positioning",
+    panel_title:
+      "A single partner who can explain the product, the platform and the rollout path clearly.",
     tag_1: "Indoor / Outdoor Cameras",
     tag_2: "4G / Battery / Solar",
     tag_3: "NVR / Storage",
@@ -32,32 +36,47 @@ const translations = {
     tag_5: "OEM / ODM",
     hero_preview_alt: "IPC solution visual overview",
     about_kicker: "About",
-    about_title: "A clear IPC partner for international business.",
-    about_card_1_title: "What I understand",
+    about_title: "Built for clients who need more than a product list.",
+    about_card_1_title: "Commercial understanding",
     about_card_1_text:
-      "IPC is not only about camera specs. It is about product fit, network conditions, power options, cloud experience, deployment workflow and long-term service.",
-    about_card_2_title: "What I deliver",
+      "IPC decisions are shaped by use case, power conditions, network constraints, service model and customer experience, not just by hardware specs.",
+    about_card_2_title: "Solution packaging",
     about_card_2_text:
-      "I package products, technology and delivery into solutions that are easier to sell, launch and deploy in real markets.",
+      "I turn products, platform capabilities and rollout logic into offers that are easier to present, easier to launch and easier to scale.",
     products_kicker: "Products",
-    products_title: "A focused product lineup for real deployment scenarios.",
+    products_title: "Three high-value categories clients ask for most often.",
     product_1_alt: "Indoor IPC camera product image",
     product_1_label: "Indoor IPC",
-    product_1_title: "Home and indoor monitoring",
+    product_1_title: "Home care and indoor monitoring",
     product_1_text:
-      "Smart indoor cameras for home care, elder care, baby rooms, pet monitoring and light commercial interiors.",
+      "Designed for home care, baby rooms, elder monitoring, pet observation and indoor commercial visibility.",
     product_2_alt: "Outdoor PTZ camera product image",
     product_2_label: "Outdoor PTZ",
-    product_2_title: "Perimeter and wide-area coverage",
+    product_2_title: "Perimeter and site coverage",
     product_2_text:
-      "Outdoor and PTZ camera options for storefronts, compounds, parking areas, parks and security perimeter use.",
+      "Built for storefronts, compounds, parking areas, courtyards and broader outdoor security coverage.",
     product_3_alt: "4G solar IPC product image",
     product_3_label: "4G / Solar Kit",
-    product_3_title: "Remote sites and difficult power conditions",
+    product_3_title: "Remote and hard-to-wire deployment",
     product_3_text:
-      "4G, battery and solar-powered IPC solutions for farms, fishponds, construction sites and remote locations.",
-    demo_kicker: "Demo",
-    demo_title: "Visual product and platform walkthrough.",
+      "Suitable for farms, fishponds, construction sites and remote locations where power or wired internet is limited.",
+    offer_kicker: "Offer",
+    offer_title: "What clients can move forward with me.",
+    offer_card_1_title: "Product selection",
+    offer_card_1_text:
+      "Indoor cameras, outdoor cameras, PTZ, 4G devices, solar models, battery cameras, NVR and bundled accessories.",
+    offer_card_2_title: "Platform layer",
+    offer_card_2_text:
+      "Cloud access, remote viewing, playback, OTA, AI alerts, app experience, API/SDK and white-label platform support.",
+    offer_card_3_title: "Business models",
+    offer_card_3_text:
+      "OEM, ODM, white-label launch, channel supply, branded rollout and market-facing solution packaging.",
+    offer_quote_label: "Why it matters",
+    offer_quote_title: "Clients do not buy isolated hardware.",
+    offer_quote_text:
+      "They buy a deployment path, a service story and a product offer that makes commercial sense.",
+    showcase_kicker: "Showcase",
+    showcase_title: "A cleaner media block for product and platform storytelling.",
     demo_window_title: "IPC Solution Walkthrough",
     demo_object_aria: "IPC product media showcase",
     demo_slide_1_alt: "IPC product living scene showcase",
@@ -67,27 +86,17 @@ const translations = {
     demo_chip_1: "Live Product View",
     demo_chip_2: "Cloud Ready",
     demo_chip_3: "AI Alert Flow",
-    demo_card_1_title: "What this demo covers",
+    demo_card_1_title: "What this section should communicate",
     demo_card_1_text:
-      "Product categories, cloud connection, AI alert flow and the overall structure of a turnkey IPC solution.",
-    demo_card_2_title: "Best use",
+      "A fast visual summary of product category, deployment environment and platform readiness.",
+    demo_card_2_title: "Next upgrade",
     demo_card_2_text:
-      "This section works as a product intro block today and can be replaced later with your real MP4, YouTube or factory demo video.",
-    offer_kicker: "Offer",
-    offer_title: "What clients can work with me on.",
-    offer_card_1_title: "Product Lines",
-    offer_card_1_text:
-      "Indoor cameras, outdoor cameras, PTZ, 4G devices, solar models, battery cameras, NVR and accessory bundles.",
-    offer_card_2_title: "Platform Stack",
-    offer_card_2_text:
-      "Cloud access, remote viewing, playback, OTA, AI alerts, app workflow, API/SDK and white-label platform support.",
-    offer_card_3_title: "Business Models",
-    offer_card_3_text:
-      "OEM, ODM, white-label launch, channel supply, branded rollout and solution packaging for overseas markets.",
+      "Replace this reel with your real MP4, factory footage or product dashboard demo when available.",
     contact_kicker: "Contact",
-    contact_title: "Looking for an IPC solution partner?",
+    contact_title:
+      "Need an IPC solution partner who can explain and package the whole offer?",
     contact_text:
-      "If you are building an IPC brand, expanding a channel business or preparing an overseas rollout, we can discuss product, platform and deployment together.",
+      "If you are building an IPC brand, growing a channel business or preparing an international rollout, we can talk about product mix, platform support and deployment strategy.",
     contact_email_button: "shenstevin@gmail.com",
     contact_meta_1_label: "Secondary Email",
     contact_meta_2_label: "Positioning",
@@ -103,16 +112,20 @@ const translations = {
     menu_aria: "切换导航",
     nav_about: "关于",
     nav_products: "产品",
-    nav_demo: "演示",
+    nav_offer: "服务",
+    nav_showcase: "展示",
     nav_contact: "联系",
     hero_eyebrow: "Stevin Shen / IPC 解决方案顾问",
-    hero_title: "把 IPC 产品、平台和部署，讲清楚并做落地。",
+    hero_title: "面向国际品牌、渠道与部署合作方的一站式 IPC 方案。",
     hero_text:
-      "我面向国际客户提供 IPC 解决方案，覆盖智能摄像机、NVR、4G 与太阳能设备、云平台、AI 分析，以及 OEM/ODM 交付支持。",
-    hero_cta_primary: "立即联系",
-    hero_cta_secondary: "查看产品",
-    panel_label: "核心定位",
-    panel_title: "服务品牌客户、渠道客户和系统合作伙伴的一站式 IPC 方案。",
+      "我帮助客户打造更容易推向市场的 IPC 产品方案，覆盖智能摄像机、4G 与太阳能设备、NVR 系统、云平台、AI 告警以及 OEM/ODM 交付支持。",
+    hero_cta_primary: "发起合作咨询",
+    hero_cta_secondary: "查看产品分类",
+    trust_1: "产品 + 平台 + 交付",
+    trust_2: "OEM / ODM / 白牌化",
+    trust_3: "面向国际客户的表达方式",
+    panel_label: "定位",
+    panel_title: "一个能够把产品、平台与 rollout 路径讲清楚的统一合作窗口。",
     tag_1: "室内 / 室外摄像机",
     tag_2: "4G / 电池 / 太阳能",
     tag_3: "NVR / 存储",
@@ -120,32 +133,47 @@ const translations = {
     tag_5: "OEM / ODM",
     hero_preview_alt: "IPC 解决方案视觉总览",
     about_kicker: "关于",
-    about_title: "一个面向国际业务、表达清晰的 IPC 合作伙伴。",
-    about_card_1_title: "我理解什么",
+    about_title: "面向那些需要的不只是产品清单的客户。",
+    about_card_1_title: "商业理解",
     about_card_1_text:
-      "IPC 不只是比摄像头参数，更关键的是产品适配、网络条件、供电方式、云端体验、部署流程和长期服务能力。",
-    about_card_2_title: "我交付什么",
+      "IPC 决策不仅由硬件参数决定，更受使用场景、供电条件、网络限制、服务模式和终端体验影响。",
+    about_card_2_title: "方案包装",
     about_card_2_text:
-      "我把产品、技术和交付方式打包成更容易销售、更容易上线、更容易落地的解决方案。",
+      "我把产品、平台能力和 rollout 逻辑打包成更容易展示、更容易上线、更容易复制的市场化方案。",
     products_kicker: "产品",
-    products_title: "围绕真实部署场景整理的核心产品线。",
+    products_title: "客户最常询问的三类高价值产品方向。",
     product_1_alt: "室内 IPC 摄像机产品图",
     product_1_label: "室内 IPC",
-    product_1_title: "家庭与室内看护",
+    product_1_title: "家庭看护与室内监控",
     product_1_text:
-      "适用于家庭看护、老人看护、婴童房、宠物监控和轻量商业室内环境的智能室内摄像机。",
+      "适用于家庭看护、婴童房、老人监护、宠物观察以及室内商业可视化场景。",
     product_2_alt: "室外 PTZ 摄像机产品图",
     product_2_label: "室外 PTZ",
-    product_2_title: "周界与大范围覆盖",
+    product_2_title: "周界与站点覆盖",
     product_2_text:
-      "适用于门店外立面、园区、停车区、庭院和周界安防的室外与云台摄像机方案。",
+      "适用于门店外立面、园区、停车区、庭院和更大范围的室外安全覆盖。",
     product_3_alt: "4G 太阳能 IPC 产品图",
     product_3_label: "4G / 太阳能套装",
-    product_3_title: "偏远点位与复杂供电环境",
+    product_3_title: "偏远点位与复杂布线环境",
     product_3_text:
-      "面向农场、鱼塘、工地和远程点位的 4G、电池与太阳能 IPC 部署方案。",
-    demo_kicker: "演示",
-    demo_title: "产品与平台的可视化演示模块。",
+      "适用于农场、鱼塘、工地和电力或有线网络受限的远程位置。",
+    offer_kicker: "服务",
+    offer_title: "客户可以直接和我推进的合作内容。",
+    offer_card_1_title: "产品选型",
+    offer_card_1_text:
+      "室内机、室外机、云台机、4G 设备、太阳能型号、电池机、NVR 与配件组合。",
+    offer_card_2_title: "平台层能力",
+    offer_card_2_text:
+      "云接入、远程查看、回放、OTA、AI 告警、App 体验、API/SDK 与白牌平台支持。",
+    offer_card_3_title: "合作模式",
+    offer_card_3_text:
+      "OEM、ODM、白牌上线、渠道供货、品牌 rollout 以及面向市场的整体方案包装。",
+    offer_quote_label: "为什么重要",
+    offer_quote_title: "客户买的不是孤立硬件。",
+    offer_quote_text:
+      "客户买的是部署路径、服务故事，以及一个具备商业逻辑的完整产品方案。",
+    showcase_kicker: "展示",
+    showcase_title: "更干净的产品与平台展示模块。",
     demo_window_title: "IPC 解决方案演示",
     demo_object_aria: "IPC 产品媒体展示区",
     demo_slide_1_alt: "IPC 产品客厅场景展示",
@@ -155,27 +183,15 @@ const translations = {
     demo_chip_1: "真实产品画面",
     demo_chip_2: "支持云平台",
     demo_chip_3: "AI 告警流程",
-    demo_card_1_title: "这个演示展示什么",
-    demo_card_1_text:
-      "展示产品类型、云端连接、AI 告警流程，以及一站式 IPC 解决方案的整体结构。",
-    demo_card_2_title: "最佳用途",
+    demo_card_1_title: "这个区块应该传达什么",
+    demo_card_1_text: "用最快速度说明产品类型、部署环境和平台就绪度。",
+    demo_card_2_title: "下一步升级",
     demo_card_2_text:
-      "现在它可作为产品介绍模块使用，后续你拿到真实 MP4、YouTube 或工厂演示视频后可以直接替换。",
-    offer_kicker: "服务内容",
-    offer_title: "客户可以和我一起推进的方向。",
-    offer_card_1_title: "产品线",
-    offer_card_1_text:
-      "室内机、室外机、云台机、4G 设备、太阳能型号、电池机、NVR 与配件套装。",
-    offer_card_2_title: "平台能力",
-    offer_card_2_text:
-      "云接入、远程查看、回放、OTA、AI 告警、App 流程、API/SDK 与白牌平台支持。",
-    offer_card_3_title: "合作模式",
-    offer_card_3_text:
-      "OEM、ODM、白牌上线、渠道供货、品牌化 rollout，以及面向海外市场的方案包装。",
+      "等你拿到真实 MP4、工厂素材或平台演示后，这里可以直接替换成正式视频模块。",
     contact_kicker: "联系",
-    contact_title: "正在寻找 IPC 解决方案合作伙伴？",
+    contact_title: "你是否需要一个能把整套 IPC 方案讲明白并包装出来的合作伙伴？",
     contact_text:
-      "如果你在做 IPC 品牌、渠道扩张，或者准备海外上线，我们可以一起讨论产品、平台与部署路径。",
+      "如果你在做 IPC 品牌、渠道增长或国际化上线，我们可以直接讨论产品组合、平台支持与部署策略。",
     contact_email_button: "shenstevin@gmail.com",
     contact_meta_1_label: "备用邮箱",
     contact_meta_2_label: "定位",
@@ -222,19 +238,19 @@ function applyTranslations(language) {
   });
 }
 
-if (toggle && nav) {
+if (toggle) {
   toggle.addEventListener("click", () => {
     const isOpen = document.body.classList.toggle("menu-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
   });
-
-  links.forEach((link) => {
-    link.addEventListener("click", () => {
-      document.body.classList.remove("menu-open");
-      toggle.setAttribute("aria-expanded", "false");
-    });
-  });
 }
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    document.body.classList.remove("menu-open");
+    toggle?.setAttribute("aria-expanded", "false");
+  });
+});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -265,9 +281,7 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    {
-      threshold: 0.18,
-    }
+    { threshold: 0.18 }
   );
 
   reveals.forEach((item) => revealObserver.observe(item));

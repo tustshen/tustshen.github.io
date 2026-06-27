@@ -234,7 +234,8 @@ main {
 .section-kicker,
 .panel-label,
 .product-label,
-.contact-label {
+.contact-label,
+.mini-label {
   margin: 0;
   font-family: "JetBrains Mono", Consolas, monospace;
   letter-spacing: 0.08em;
@@ -269,6 +270,29 @@ main {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 28px;
+}
+
+.trust-strip,
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.trust-strip span,
+.hero-tags span,
+.demo-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(91, 221, 255, 0.14);
+  background: rgba(7, 22, 35, 0.72);
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.74rem;
+  color: #dff8ff;
 }
 
 .button {
@@ -352,23 +376,6 @@ main {
   color: var(--text);
 }
 
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.hero-tags span {
-  padding: 9px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(91, 221, 255, 0.14);
-  background: rgba(7, 22, 35, 0.78);
-  font-family: "JetBrains Mono", Consolas, monospace;
-  font-size: 0.76rem;
-  color: #dff8ff;
-}
-
 .hero-preview {
   margin-top: 18px;
   border-radius: 20px;
@@ -405,21 +412,22 @@ main {
 
 .simple-grid,
 .product-grid,
-.demo-layout {
+.demo-layout,
+.offer-layout {
   display: grid;
   gap: 18px;
 }
 
-.simple-grid {
+.simple-grid,
+.about-grid,
+.offer-layout {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.about-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.offer-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.offer-column,
+.demo-copy {
+  display: grid;
+  gap: 18px;
 }
 
 .info-card,
@@ -431,6 +439,12 @@ main {
 .product-body h3 {
   margin: 0 0 12px;
   font-size: 1.34rem;
+}
+
+.accent-card {
+  background:
+    linear-gradient(135deg, rgba(12, 38, 61, 0.96), rgba(6, 16, 26, 0.92)),
+    var(--surface);
 }
 
 .product-grid {
@@ -538,30 +552,12 @@ main {
   z-index: 2;
 }
 
-.demo-chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 0 12px;
-  border-radius: 999px;
-  background: rgba(5, 17, 28, 0.72);
-  border: 1px solid rgba(91, 221, 255, 0.18);
-  font-family: "JetBrains Mono", Consolas, monospace;
-  font-size: 0.74rem;
-  color: #dff8ff;
-}
-
 @keyframes demoFade {
   0% { opacity: 0; transform: scale(1.02); }
   6% { opacity: 1; }
   22% { opacity: 1; transform: scale(1); }
   28% { opacity: 0; transform: scale(1); }
   100% { opacity: 0; }
-}
-
-.demo-copy {
-  display: grid;
-  gap: 18px;
 }
 
 .contact-section {
@@ -603,8 +599,7 @@ main {
 }
 
 @media (max-width: 1080px) {
-  .product-grid,
-  .offer-grid {
+  .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -614,7 +609,7 @@ main {
   .contact-card,
   .simple-grid,
   .about-grid,
-  .offer-grid,
+  .offer-layout,
   .product-grid,
   .demo-layout,
   .section-heading {
@@ -625,6 +620,7 @@ main {
 @media (max-width: 760px) {
   .site-header {
     padding: 14px 16px;
+    gap: 12px;
   }
 
   .site-nav {
@@ -661,10 +657,6 @@ main {
 
   .hero h1 {
     font-size: clamp(2.6rem, 14vw, 4.2rem);
-  }
-
-  .site-header {
-    gap: 12px;
   }
 
   .header-tools {
