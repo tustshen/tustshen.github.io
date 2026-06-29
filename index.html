@@ -20,7 +20,7 @@
   >
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="home">
   <div class="page-shell">
     <div class="ambient ambient-left"></div>
     <div class="ambient ambient-right"></div>
@@ -32,16 +32,15 @@
 
       <nav class="site-nav" id="site-nav" data-i18n-attr="aria-label:nav_aria">
         <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#products" data-i18n="nav_products">Products</a>
-        <a href="#offer" data-i18n="nav_offer">Offer</a>
-        <a href="#showcase" data-i18n="nav_showcase">Showcase</a>
+        <a href="products.html" data-i18n="nav_products">Products</a>
+        <a href="#trust" data-i18n="nav_trust">Trust</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
 
       <div class="header-tools">
         <div class="lang-switcher" data-i18n-attr="aria-label:lang_aria">
           <button class="lang-button is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
-          <button class="lang-button" type="button" data-lang="zh" aria-pressed="false">中</button>
+          <button class="lang-button" type="button" data-lang="zh" aria-pressed="false">ZH</button>
         </div>
 
         <button
@@ -71,7 +70,7 @@
               href="mailto:shenstevin@gmail.com?subject=IPC%20Solution%20Inquiry"
               data-i18n="hero_cta_primary"
             >Request collaboration</a>
-            <a class="button button-secondary" href="#products" data-i18n="hero_cta_secondary">See product categories</a>
+            <a class="button button-secondary" href="products.html" data-i18n="hero_cta_secondary">See product categories</a>
           </div>
           <div class="trust-strip">
             <span data-i18n="trust_1">Product + Platform + Delivery</span>
@@ -125,7 +124,34 @@
         </div>
       </section>
 
-      <section class="section reveal" id="products">
+      <section class="section reveal" id="trust">
+        <div class="section-heading">
+          <p class="section-kicker" data-i18n="trust_kicker">Why Trust Me</p>
+          <h2 data-i18n="trust_title">Clearer commercial positioning for international buyers.</h2>
+        </div>
+        <div class="trust-grid">
+          <article class="info-card">
+            <h3 data-i18n="trust_card_1_title">Product Scope</h3>
+            <p data-i18n="trust_card_1_text">
+              Coverage across indoor cameras, outdoor PTZ, 4G deployment, solar kits, NVR systems and bundled accessories.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3 data-i18n="trust_card_2_title">Platform Understanding</h3>
+            <p data-i18n="trust_card_2_text">
+              Not only device selection, but also cloud access, app flow, OTA, AI alerts and API/SDK integration logic.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3 data-i18n="trust_card_3_title">Go-to-Market Support</h3>
+            <p data-i18n="trust_card_3_text">
+              Better suited for international presentation, partner discussion, OEM/ODM packaging and rollout planning.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="products-preview">
         <div class="section-heading">
           <p class="section-kicker" data-i18n="products_kicker">Products</p>
           <h2 data-i18n="products_title">Three high-value categories clients ask for most often.</h2>
@@ -182,43 +208,41 @@
             </div>
           </article>
         </div>
+        <div class="section-footer">
+          <a class="button button-secondary" href="products.html" data-i18n="products_footer_cta">Open full product page</a>
+        </div>
       </section>
 
-      <section class="section reveal" id="offer">
+      <section class="section reveal" id="who">
         <div class="section-heading">
-          <p class="section-kicker" data-i18n="offer_kicker">Offer</p>
-          <h2 data-i18n="offer_title">What clients can move forward with me.</h2>
+          <p class="section-kicker" data-i18n="who_kicker">Who I Work With</p>
+          <h2 data-i18n="who_title">Positioned for the kinds of buyers and partners who actually move IPC projects forward.</h2>
         </div>
-        <div class="offer-layout">
-          <div class="offer-column">
-            <article class="info-card feature-card">
-              <h3 data-i18n="offer_card_1_title">Product selection</h3>
-              <p data-i18n="offer_card_1_text">
-                Indoor cameras, outdoor cameras, PTZ, 4G devices, solar models, battery cameras, NVR and bundled accessories.
-              </p>
-            </article>
-            <article class="info-card feature-card">
-              <h3 data-i18n="offer_card_2_title">Platform layer</h3>
-              <p data-i18n="offer_card_2_text">
-                Cloud access, remote viewing, playback, OTA, AI alerts, app experience, API/SDK and white-label platform support.
-              </p>
-            </article>
-          </div>
-          <div class="offer-column">
-            <article class="info-card feature-card">
-              <h3 data-i18n="offer_card_3_title">Business models</h3>
-              <p data-i18n="offer_card_3_text">
-                OEM, ODM, white-label launch, channel supply, branded rollout and market-facing solution packaging.
-              </p>
-            </article>
-            <article class="info-card feature-card accent-card">
-              <p class="mini-label" data-i18n="offer_quote_label">Why it matters</p>
-              <h3 data-i18n="offer_quote_title">Clients do not buy isolated hardware.</h3>
-              <p data-i18n="offer_quote_text">
-                They buy a deployment path, a service story and a product offer that makes commercial sense.
-              </p>
-            </article>
-          </div>
+        <div class="who-grid">
+          <article class="info-card">
+            <h3 data-i18n="who_card_1_title">Brands</h3>
+            <p data-i18n="who_card_1_text">
+              Teams building or expanding a branded product line for international sales.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3 data-i18n="who_card_2_title">Distributors</h3>
+            <p data-i18n="who_card_2_text">
+              Buyers who need clearer category structure, better SKU planning and supplier-side communication.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3 data-i18n="who_card_3_title">Installers & Integrators</h3>
+            <p data-i18n="who_card_3_text">
+              Partners who care about deployment logic, connectivity, storage, support and after-sales clarity.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3 data-i18n="who_card_4_title">Cross-border Sellers</h3>
+            <p data-i18n="who_card_4_text">
+              Sellers who need a more market-ready way to explain IPC products to overseas customers.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -299,14 +323,18 @@
               class="button button-primary button-block"
               href="mailto:shenstevin@gmail.com?subject=IPC%20Solution%20Inquiry"
               data-i18n="contact_email_button"
-            >shenstevin@gmail.com</a>
+            >Email for business inquiry</a>
             <div class="contact-meta">
-              <p class="contact-label" data-i18n="contact_meta_1_label">Secondary Email</p>
+              <p class="contact-label" data-i18n="contact_meta_1_label">Business Email</p>
+              <p class="contact-value">shenstevin@gmail.com</p>
+            </div>
+            <div class="contact-meta">
+              <p class="contact-label" data-i18n="contact_meta_2_label">Secondary Contact</p>
               <p class="contact-value">tustshen@126.com</p>
             </div>
             <div class="contact-meta">
-              <p class="contact-label" data-i18n="contact_meta_2_label">Positioning</p>
-              <p class="contact-value" data-i18n="contact_meta_2_value">IPC Products, Cloud and Deployment</p>
+              <p class="contact-label" data-i18n="contact_meta_3_label">Positioning</p>
+              <p class="contact-value" data-i18n="contact_meta_3_value">IPC Products, Cloud and Deployment</p>
             </div>
           </div>
         </div>
